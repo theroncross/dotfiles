@@ -7,7 +7,7 @@ ln -si ${BASEDIR}/vimrc ~/.vimrc
 ln -si ${BASEDIR}/vim/ ~/.vim
 
 #nvim
-ln -si ${BASEDIR}/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -si ${BASEDIR}/nvim.init.vim ~/.config/nvim/init.vim
 
 # git
 ln -si ${BASEDIR}/gitconfig ~/.gitconfig

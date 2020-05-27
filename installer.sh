@@ -11,3 +11,6 @@ ln -si ${BASEDIR}/nvim.init.vim ~/.config/nvim/init.vim
 
 # git
 ln -si ${BASEDIR}/gitconfig ~/.gitconfig
+
+# alacritty
+ln -si ${BASEDIR}/alacritty.yml ~/.config/alacritty/alacritty.yml

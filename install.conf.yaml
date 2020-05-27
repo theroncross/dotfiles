@@ -1,0 +1,19 @@
+- defaults:
+        link:
+                relink: true
+
+- clean: ['~']
+
+- link:
+        ~/.gitconfig:
+        ~/.vimrc:
+        ~/.config/:
+                glob: true
+                path: config/*
+
+- create:
+        - ~/projects
+        - ~/.vim/undo-history
+
+- shell:
+        - [chsh -s $(which fish), Making fish the default shell]

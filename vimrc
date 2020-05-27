@@ -199,25 +199,26 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf'
   Plug 'vifm/vifm.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
 
+  Plug 'leafgarland/typescript-vim'
   Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'nullvoxpopuli/coc-ember', {'do': 'yarn install --frozen-lockfile'}
 
   Plug 'tomasiser/vim-code-dark'
-" Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 let g:coc_global_extensions = [
+  \ 'coc-actions',
   \ 'coc-css',
   \ 'coc-json',
   \ 'coc-html',
   \ 'coc-vimlsp',
   \ 'coc-highlight',
+  \ 'coc-ember',
 \ ]

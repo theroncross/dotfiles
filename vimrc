@@ -200,15 +200,17 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 call plug#begin('~/.local/share/nvim/plugged')
-  Plug 'junegunn/fzf'
-  Plug 'vifm/vifm.vim'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
-
-  Plug 'leafgarland/typescript-vim'
-  Plug 'joukevandermaas/vim-ember-hbs'
+  Plug 'dense-analysis/ale'
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'junegunn/fzf'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'vifm/vifm.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+
+  Plug 'joukevandermaas/vim-ember-hbs'
 
   Plug 'tomasiser/vim-code-dark'
 call plug#end()

@@ -8,6 +8,7 @@
         ~/.gitconfig:
         ~/.gitignore_global:
         ~/.vimrc:
+        ~/.prettierrc:
         ~/.config/:
                 glob: true
                 path: config/*

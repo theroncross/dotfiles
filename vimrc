@@ -216,9 +216,16 @@ call plug#end()
 let g:coc_global_extensions = [
   \ 'coc-actions',
   \ 'coc-css',
-  \ 'coc-json',
-  \ 'coc-html',
-  \ 'coc-vimlsp',
-  \ 'coc-highlight',
   \ 'coc-ember',
+  \ 'coc-eslint',
+  \ 'coc-highlight',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-prettier',
+  \ 'coc-tsserver',
+  \ 'coc-vimlsp',
 \ ]
+
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\}

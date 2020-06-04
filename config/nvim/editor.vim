@@ -18,6 +18,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set signcolumn=yes    " Constant width left column
+set colorcolumn=80
 
 " ---STATUSLINE---
 set laststatus=2      " Always display status line

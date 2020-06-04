@@ -131,9 +131,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" Open fuzzy file search
-nnoremap <C-p> :GFiles<CR>
-
 " Coc
 " TextEdit might fail if hidden is not set.
 set hidden

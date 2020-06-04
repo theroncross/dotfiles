@@ -24,6 +24,7 @@ set viminfo='100,<9999,s100
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
+set noswapfile
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -31,6 +32,20 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+
+let mapleader = " "
+
+nnoremap <silent><leader>h :wincmd h<CR>
+nnoremap <silent><leader>j :wincmd j<CR>
+nnoremap <silent><leader>k :wincmd k<CR>
+nnoremap <silent><leader>l :wincmd l<CR>
+nnoremap <leader>ps :Rg<space>
+nnoremap <silent><leader>= :vertical resize +5<CR>
+nnoremap <silent><leader>- :vertical resize -5<CR>
+nnoremap <silent><leader>t :TabVifm<CR>
+nnoremap <silent><leader>v :VsplitVifm<CR>
+nnoremap <silent><C-p> :GFiles<CR>
+nnoremap <leader>gs :G<CR>
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'
@@ -45,11 +60,16 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'tomasiser/vim-code-dark'
+  Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \}
+
+if executable('rg')
+  let g:rg_derive_root='true'
+endif
 
 " Load other config files
 so ~/.config/nvim/coc.vim

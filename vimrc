@@ -34,9 +34,10 @@ set shortmess+=c
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'leafgarland/typescript-vim'
   Plug 'vifm/vifm.vim'
   Plug 'vim-airline/vim-airline'

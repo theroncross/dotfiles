@@ -45,7 +45,16 @@ nnoremap <silent><leader>- :vertical resize -5<CR>
 nnoremap <silent><leader>t :TabVifm<CR>
 nnoremap <silent><leader>v :VsplitVifm<CR>
 nnoremap <silent><C-p> :GFiles<CR>
+
+" git status - 's' to stage, 'u' to unstage
 nnoremap <leader>gs :G<CR>
+" Merge conflicts:
+" 'dv' on file with conflicts in git status list
+" <C-w><C-o> to save and close
+" use current (left)
+nnoremap <leader>gf :diffget //2<CR>
+" use branch (right)
+nnoremap <leader>gj :diffget //3<CR>
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'

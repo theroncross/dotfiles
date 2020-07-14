@@ -13,6 +13,9 @@ autocmd BufNewFile,BufRead *.hbs setfiletype handlebars
 " Turn off modelines
 set modelines=0
 
+" Open :Gdiff with vertical split
+set diffopt+=vertical
+
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>

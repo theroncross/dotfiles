@@ -55,9 +55,11 @@ nnoremap <leader>gs :G<CR>
 " 'dv' on file with conflicts in git status list
 " <C-w><C-o> to save and close
 " use current (left)
-nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gh :diffget //2<CR>
 " use branch (right)
-nnoremap <leader>gj :diffget //3<CR>
+nnoremap <leader>gl :diffget //3<CR>
+
+let g:coc_node_path = '/home/theroncross/.nvm/versions/node/v14.15.0/bin/node'
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'
@@ -73,11 +75,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'tomasiser/vim-code-dark'
   Plug 'jremmen/vim-ripgrep'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \}
+
+" enable fix-on-save in Prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 if executable('rg')
   let g:rg_derive_root='true'

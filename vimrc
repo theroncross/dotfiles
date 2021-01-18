@@ -16,12 +16,17 @@ set modelines=0
 " Open :Gdiff with vertical split
 set diffopt+=vertical
 
-" Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
+" Open Quickfix links in new tab (or switch to tab if already open)
+set switchbuf+=usetab,newtab
+
+" Vim's auto indentation feature does not work properly with text copied from outside of Vim.
+" Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
-" Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
+" Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data.
+" Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
 
 " Some servers have issues with backup files, see #649.
@@ -48,6 +53,7 @@ nnoremap <silent><leader>- :vertical resize -5<CR>
 nnoremap <silent><leader>t :TabVifm<CR>
 nnoremap <silent><leader>v :VsplitVifm<CR>
 nnoremap <silent><C-p> :GFiles<CR>
+nnoremap <silent><leader>b :Buffer<CR>
 
 " git status - 's' to stage, 'u' to unstage
 nnoremap <leader>gs :G<CR>
@@ -59,7 +65,7 @@ nnoremap <leader>gh :diffget //2<CR>
 " use branch (right)
 nnoremap <leader>gl :diffget //3<CR>
 
-let g:coc_node_path = '/home/theroncross/.nvm/versions/node/v14.15.0/bin/node'
+let g:coc_node_path = 'node'
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'

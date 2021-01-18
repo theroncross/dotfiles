@@ -17,3 +17,5 @@
 	excludesfile = /home/theroncross/.gitignore_global
 [advice]
   detachedHead = false
+[pull]
+	rebase = false

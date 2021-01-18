@@ -20,5 +20,11 @@
   "prettier.eslintIntegration": true,
 
   // NPM
-  "npm.binPath": "/home/theroncross/.nvm/versions/node/v14.15.0/bin/npm"
+  "npm.binPath": "npm",
+
+  // YAML
+  "yaml.format.enable": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/travis": ["**/.travis.yml"]
+  }
 }

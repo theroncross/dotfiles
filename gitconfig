@@ -19,3 +19,5 @@
   detachedHead = false
 [pull]
 	rebase = false
+[credential]
+	helper = cache

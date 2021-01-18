@@ -162,7 +162,7 @@ exec --no-startup-id pasystray output $monitor $laptop
 # start flameshot for screengrabs
 exec --no-startup-id flameshot
 # map CAPS_LOCK to CTRL
-exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id xmodmap ./.Xmodmap
 
 # setup xautolock
 exec --no-startup-id xautolock \

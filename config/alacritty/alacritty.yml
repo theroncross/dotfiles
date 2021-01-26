@@ -392,7 +392,7 @@ background_opacity: 0.99
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
-working_directory: /home/theroncross/Documents/webapp
+working_directory: ~
 
 # WinPTY backend (Windows only)
 #

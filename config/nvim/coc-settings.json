@@ -9,14 +9,21 @@
   "coc.source.file.enable": false,
   "coc.source.around.enable": false,
 
+  // exporer
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": false,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  },
+
   // coc-actions config
   "coc-actions.hideCursor": false,
 
   // Linting
   "eslint.quiet": true,
-  "eslint.packageManager": "yarn",
-  "eslint.filetypes": ["javascript", "json", "typescript"],
-  "eslint.autoFix": true,
+  "eslint.autoFixOnSave": true,
   "prettier.eslintIntegration": true,
 
   // NPM
@@ -24,7 +31,9 @@
 
   // YAML
   "yaml.format.enable": true,
-  "yaml.schemas": {
-    "https://json.schemastore.org/travis": ["**/.travis.yml"]
-  }
+  "yaml.format.printWidth": 80,
+  "yaml.format.proseWrap": "always",
+
+  // Rust
+  "rust-client.updateOnStartup": true
 }

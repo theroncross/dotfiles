@@ -1,4 +1,7 @@
 # Aliases
+alias ls='exa -la'
+alias cat='bat --theme=Coldark-Dark'
+
 alias g='git'
 #compdef g=git
 alias gst='git status'

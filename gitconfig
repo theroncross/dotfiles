@@ -8,16 +8,21 @@
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
-[commit]
-  template = ~/.gitmessage
 [alias]
 	logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
-  editor = vim
-	excludesfile = /home/theroncross/.gitignore_global
+  editor = nvim
+	excludesfile = /home/theron/.gitignore_global
 [advice]
   detachedHead = false
 [pull]
 	rebase = false
 [credential]
 	helper = cache
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

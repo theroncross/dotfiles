@@ -66,10 +66,12 @@ set viminfo='100,<9999,s100
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-let g:coc_node_path = 'node'
+" let g:coc_node_path = 'node'
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \}
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1
 
 " enable fix-on-save in Prettier
 let g:prettier#autoformat = 1

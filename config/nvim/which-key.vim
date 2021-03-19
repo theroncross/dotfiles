@@ -1,6 +1,5 @@
-let mapleader = "\<Space>"
-
 " Map leader to which_key
+let mapleader = "\<Space>"
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
@@ -10,53 +9,58 @@ let g:which_key_map =  {}
 let g:which_key_sep = '→'
 set timeoutlen=300
 
-
-" Not a fan of floating windows for this
-let g:which_key_use_floating_win = 0
-
 " Change the colors if you want
 highlight default link WhichKey          Operator
 highlight default link WhichKeySeperator DiffAdded
 highlight default link WhichKeyGroup     Identifier
 highlight default link WhichKeyDesc      Function
 
-" Hide status line
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \ | autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> K  <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+
+" inoremap <silent><expr> <CR> compe#confirm('<CR>')
 
 nnoremap <silent><leader>- :vertical resize -5<CR>
 nnoremap <silent><leader>= :vertical resize +5<CR>
-" Single mappings
-" let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
-" let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
-nnoremap <silent><leader>o :only<CR>
-let g:which_key_map['o'] = [ ':only'                      , 'only']
+nnoremap <silent><leader>'[' <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent><leader>']' <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent><leader>a   <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent><leader>e :NvimTreeToggle<CR>
 nnoremap <silent><leader>p :PrettierAsync<CR>
-let g:which_key_map['p'] = [ ':PrettierAsync'             , 'format file']
 nnoremap <silent><leader>t :TabVifm<CR>
-let g:which_key_map['t'] = [ ':TabVifm'                   , 'search new tab']
-let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 nnoremap <silent><leader>v :VsplitVifm<CR>
-let g:which_key_map['v'] = [ ':VsplitVifm'                 , 'search vsplit']
+let g:which_key_map['['] = [ 'diagnostic.goto_next' , 'next diagnostic']
+let g:which_key_map[']'] = [ 'diagnostic.goto_prev' , 'prev diagnostic']
+let g:which_key_map['a'] = [ 'code_action' , 'code action']
+let g:which_key_map['p'] = [ ':PrettierAsync' , 'format file']
+let g:which_key_map['t'] = [ ':TabVifm'       , 'search new tab']
+let g:which_key_map['T'] = [ ':Rg'            , 'search text' ]
+let g:which_key_map['v'] = [ ':VsplitVifm'    , 'search vsplit']
 
-
-"*** Coc ***
-nmap <leader>ca :CocAction<CR>
-nmap <leader>cf :CocFix<CR>
-nmap <leader>cr <Plug>(coc-rename)
-let g:which_key_map.c = {
-  \ 'name' : '+Coc' ,
-  \ 'a' : [':<Plug>(coc-codeaction)' , 'codeaction on line'],
-  \ 'f' : [':<Plug>(coc-quickfix)'   , 'quickfix on line'],
-  \ 'r' : [':<Plug>(coc-rename)'     , 'rename symbol'],
+nnoremap <silent><leader>bd :bd<CR>
+nnoremap <silent><leader>bf :bfirst<CR>
+nnoremap <silent><leader>bn :bnext<CR>
+nnoremap <silent><leader>bl :blast<CR>
+nnoremap <silent><leader>bp :bprevious<CR>
+let g:which_key_map.b = {
+  \ 'name' : '+buffer' ,
+  \ 'd' : [':bd'          , 'close'],
+  \ 'f' : [':bfirst'      , 'first'],
+  \ 'n' : [':bnext'       , 'next'],
+  \ 'l' : [':blast'       , 'last'],
+  \ 'p' : [':bprevious'   , 'previous'],
   \ }
-
 
 "*** git ***
 " Merge conflicts:
 " 'dv' on file with conflicts in git status list
 " <C-w><C-o> to save and close
+nnoremap <leader>ga :GitGutterStageHunk<CR>
 nnoremap <leader>gg :G<CR>
 nnoremap <leader>gh :diffget //2<CR>
 nnoremap <leader>gl :diffget //3<CR>
@@ -65,6 +69,7 @@ nnoremap <leader>gp :GitGutterPrevHunk<CR>
 nnoremap <leader>gs :GitGutterStageHunk<CR>
 let g:which_key_map.g = {
   \ 'name' : '+git' ,
+  \ 'a' : [':GitGutterStageHunk'  , 'stage hunk'],
   \ 'g' : [':G'                   , 'git status (dv?)'],
   \ 'h' : [':diffget //2'         , 'use current'],
   \ 'l' : [':diffget //3'         , 'use branch'],
@@ -108,6 +113,7 @@ nnoremap <silent><leader>wh :wincmd h<CR>
 nnoremap <silent><leader>wj :wincmd j<CR>
 nnoremap <silent><leader>wk :wincmd k<CR>
 nnoremap <silent><leader>wl :wincmd l<CR>
+nnoremap <silent><leader>wo :only<CR>
 nnoremap <silent><leader>wq :wincmd q<CR>
 let g:which_key_map.w = {
   \ 'name' : '+window' ,
@@ -115,6 +121,8 @@ let g:which_key_map.w = {
   \ 'j' : [':wincmd j'     , 'down'],
   \ 'k' : [':wincmd k'     , 'up'],
   \ 'l' : [':wincmd l'     , 'right'],
+  \ 'o' : [':only'         , 'only'],
+  \ 'q' : [':wincmd q'     , 'close'],
   \ }
 
 " Register which key map

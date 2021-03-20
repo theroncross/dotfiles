@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'hoob3rt/lualine.nvim'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'hrsh7th/nvim-compe'
   Plug 'neovim/nvim-lspconfig'
@@ -15,7 +16,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rust-lang/rust.vim'
   Plug 'leafgarland/typescript-vim'
   Plug 'vifm/vifm.vim'
-  Plug 'vim-airline/vim-airline'
   Plug 'rstacruz/vim-closer'
   Plug 'tomasiser/vim-code-dark'
   Plug 'joukevandermaas/vim-ember-hbs'
@@ -32,7 +32,8 @@ call plug#end()
 so ~/dotfiles/config/nvim/start-screen.vim
 so ~/dotfiles/config/nvim/which-key.vim
 :lua require('compe-config')
-:lua require('lsp-config')
 :lua require('editor')
+:lua require('lualine-config')
+:lua require('lsp-config')
 
 colorscheme codedark

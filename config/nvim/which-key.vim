@@ -32,8 +32,6 @@ nnoremap <silent><leader>']' <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent><leader>a   <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent><leader>e :NvimTreeToggle<CR>
 nnoremap <silent><leader>p :PrettierAsync<CR>
-nnoremap <silent><leader>t :TabVifm<CR>
-nnoremap <silent><leader>v :VsplitVifm<CR>
 let g:which_key_map['['] = [ 'diagnostic.goto_next' , 'next diagnostic']
 let g:which_key_map[']'] = [ 'diagnostic.goto_prev' , 'prev diagnostic']
 let g:which_key_map['a'] = [ 'code_action' , 'code action']
@@ -54,6 +52,19 @@ let g:which_key_map.b = {
   \ 'n' : [':bnext'       , 'next'],
   \ 'l' : [':blast'       , 'last'],
   \ 'p' : [':bprevious'   , 'previous'],
+  \ }
+
+" Using lua functions
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+let g:which_key_map.f = {
+  \ 'name' : '+find' ,
+  \ 'b' : ['telescope.buffers'    , 'buffers'],
+  \ 'f' : ['telescope.find_files' , 'files'],
+  \ 'g' : ['telescope.live_grep'  , 'live grep'],
+  \ 'h' : ['telescope.help_tags'  , 'help tags'],
   \ }
 
 "*** git ***

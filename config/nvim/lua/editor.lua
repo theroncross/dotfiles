@@ -38,7 +38,7 @@ vim.o.splitright = true         -- Add vsplit window to right
 
 -- ---MISC---
 vim.o.undofile = true           -- save undo files
-vim.o.undodir = [[$HOME/.vim/undo-history]]
+vim.o.undodir = [[home/theron/.vim/undo-history]]
 vim.o.undolevels = 1000
 vim.o.undoreload = 1000
 

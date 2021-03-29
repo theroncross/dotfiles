@@ -19,7 +19,7 @@ vim.o.list = true               -- Display different types of white spaces.
 vim.o.modelines = 0             -- Turn off modelines
 vim.o.number = true             -- show line numbers
 vim.o.relativenumber = true
-vim.o.scrolloff = 3             -- minimum lines to keep above and below cursor
+vim.o.scrolloff = 2             -- minimum lines to keep above and below cursor
 vim.o.shiftwidth = 2
 vim.o.signcolumn = 'yes'        -- Constant width left column
 vim.o.smartcase = true          -- case-sensitive on uppercase search term
@@ -27,6 +27,7 @@ vim.o.syntax = 'on'             -- Turn on syntax highlighting.
 vim.o.tabstop = 2
 vim.o.termguicolors = true
 vim.o.wrap = true               -- wrap long lines
+vim.o.wrapscan = false
 
 -- ---COMMAND---
 vim.o.cmdheight = 2             -- Give more space for displaying messages.

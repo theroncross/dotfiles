@@ -11,12 +11,11 @@ local eslint = {
 
 require "lspconfig".efm.setup {
   init_options = {documentFormatting = true, codeAction = true},
-  filetypes = {"javascript", "typescript"},
+  filetypes = {"javascript", "typescript", "handlebars"},
   root_dir = function(fname)
     return lspconfig.util.root_pattern("tsconfig.json")(fname) or
     lspconfig.util.root_pattern(".eslintrc.js", ".git")(fname);
   end,
-  init_options = {documentFormatting = true},
   settings = {
     rootMarkers = {".eslintrc.js", ".git/"},
     languages = {

@@ -16,7 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'rstacruz/vim-closer'
   Plug 'tomasiser/vim-code-dark'
-  Plug 'joukevandermaas/vim-ember-hbs'
+  " Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'andymass/vim-matchup'
@@ -30,6 +30,7 @@ so ~/dotfiles/config/nvim/start-screen.vim
 so ~/dotfiles/config/nvim/which-key.vim
 :lua require('compe-config')
 :lua require('editor')
+:lua require('ember-language-server')
 :lua require('lualine-config')
 :lua require('lsp-config')
 :lua require('nvim-tree-config')

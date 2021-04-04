@@ -17,6 +17,7 @@ vim.o.ignorecase = true         -- case-insensitive on lowercase search
 vim.o.linebreak = true          -- breaks lines on words
 vim.o.list = true               -- Display different types of white spaces.
 vim.o.modelines = 0             -- Turn off modelines
+vim.o.swapfile = false
 vim.o.number = true             -- show line numbers
 vim.o.relativenumber = true
 vim.o.scrolloff = 2             -- minimum lines to keep above and below cursor
@@ -50,10 +51,7 @@ vim.o.switchbuf = 'usetab,newtab' -- Open Quickfix links in new tab (or switch t
 vim.g.ale_fixers = { ['javascript'] = {'prettier', 'eslint'} }
 vim.g.ale_javascript_eslint_executable = 'eslint_d'
 vim.g.ale_javascript_eslint_use_global = 1
-
--- enable fix-on-save in Prettier
--- vim.g.prettier#autoformat = 1
--- vim.g.prettier#autoformat_require_pragma = 0
+vim.g.ale_fix_on_save = 1       -- prettier
 
 -- enable Rust support
 vim.g.rustfmt_autosave = 1

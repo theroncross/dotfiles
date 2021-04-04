@@ -39,3 +39,9 @@ so ~/dotfiles/config/nvim/which-key.vim
 :lua require('telescope-config')
 
 colorscheme codedark
+hi Normal       ctermbg=none  guibg=none
+hi CursorLineNr               guibg=none
+hi EndOfBuffer                guibg=none
+hi Folded                     guibg=none
+hi LineNr       ctermbg=none  guibg=none
+hi SignColumn   ctermbg=none  guibg=none

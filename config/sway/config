@@ -37,6 +37,8 @@ bindsym $mod+End exec 'swaylock -f -c 000000'
 
 # Daemons and applets
 exec mako
+bindsym $mod+Grave exec 'makoctl dismiss'
+bindsym $mod+Shift+Grave exec 'makoctl dismiss --all'
 exec nm-applet --indicator
 
 ### Input configuration
@@ -111,8 +113,8 @@ input * {
 #
 # Workspaces:
 #
-    gaps outer 4
-    gaps inner 2
+    gaps inner 5
+    default_border pixel 2
 
     # Name workspaces
     set $ws1 "1:slack"

@@ -40,6 +40,7 @@ so ~/dotfiles/config/nvim/which-key.vim
 
 colorscheme codedark
 hi Normal       ctermbg=none  guibg=none
+hi Directory    ctermbg=none  guibg=none
 hi CursorLineNr               guibg=none
 hi EndOfBuffer                guibg=none
 hi Folded                     guibg=none

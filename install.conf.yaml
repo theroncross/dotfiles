@@ -13,7 +13,5 @@
       glob: true
       path: config/*
 
-- create: ~/.vim/undo-history
-
 - shell:
     - [chsh -s $(which fish), Making fish the default shell]

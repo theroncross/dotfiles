@@ -3,6 +3,7 @@ let g:loaded_matchit = 1 " prevent builtin matchit from loading
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'           " autofixing
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'ThePrimeagen/git-worktree.nvim'
   Plug 'hoob3rt/lualine.nvim'         " statusline
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'hrsh7th/nvim-compe'

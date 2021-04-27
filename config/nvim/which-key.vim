@@ -78,15 +78,22 @@ nnoremap <leader>gl :diffget //3<CR>
 nnoremap <leader>gn :GitGutterNextHunk<CR>
 nnoremap <leader>gp :GitGutterPrevHunk<CR>
 nnoremap <leader>gs :GitGutterStageHunk<CR>
+nnoremap <leader>gwt <cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>
+nnoremap <leader>gwc <cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>
 let g:which_key_map.g = {
   \ 'name' : '+git' ,
-  \ 'a' : [':GitGutterStageHunk'  , 'stage hunk'],
-  \ 'g' : [':G'                   , 'git status (dv?)'],
-  \ 'h' : [':diffget //2'         , 'use current'],
-  \ 'l' : [':diffget //3'         , 'use branch'],
-  \ 'n' : [':GitGutterNextHunk'   , 'next hunk'],
-  \ 'p' : [':GitGutterPrevHunk'   , 'previous hunk'],
-  \ 's' : [':GitGutterStageHunk'  , 'previous hunk'],
+  \ 'a' : [':GitGutterStageHunk'    , 'stage hunk'],
+  \ 'g' : [':G'                     , 'git status (dv?)'],
+  \ 'h' : [':diffget //2'           , 'use current'],
+  \ 'l' : [':diffget //3'           , 'use branch'],
+  \ 'n' : [':GitGutterNextHunk'     , 'next hunk'],
+  \ 'p' : [':GitGutterPrevHunk'     , 'previous hunk'],
+  \ 's' : [':GitGutterStageHunk'    , 'previous hunk'],
+  \ 'w' : {
+    \ 'name' : '+worktrees',
+    \ 't' : [':telesecope.git_worktree', 'search worktrees'],
+    \ 'c' : [':telesecope.git_worktree', 'create worktree'],
+    \ }
   \ }
 
 

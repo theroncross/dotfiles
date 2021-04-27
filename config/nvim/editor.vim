@@ -42,7 +42,7 @@ set diffopt+=vertical " Open :Gdiff with vertical split
 " ---MISC---
 set nocompatible      " Set compatibility to Vim only.
 set undofile          " save undo files
-set undodir=$HOME/.vim/undo-history
+set undodir=/home/theron/.vim/undo-history
 set undolevels=1000
 set undoreload=1000
 set nobackup          " Some servers have issues with backup files

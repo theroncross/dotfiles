@@ -1,6 +1,6 @@
 # Aliases
 alias ls='exa -la'
-alias cat='bat --theme=Coldark-Dark'
+alias cat='batcat --theme=TwoDark'
 
 alias g='git'
 #compdef g=git
@@ -51,7 +51,13 @@ alias gstc='gst | grep \'both modified:\' | grep -oP \'\S+$\' | xargs nvim'
 alias gup='git pull --rebase'
 #compdef _git gup=git-fetch
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
-#compdef _git ga=git-whatchanged
+#compdef _git gwc=git-whatchanged
+alias gwtr='git worktree remove'
+#compdef _git gwtr=git-worktree
+
+function gwta
+  git worktree add -b $argv $argv
+end
 
 function gdv
   git diff -w $argv | view -

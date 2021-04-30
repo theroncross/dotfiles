@@ -22,11 +22,12 @@ vim.o.number = true             -- show line numbers
 vim.o.relativenumber = true
 vim.o.scrolloff = 2             -- minimum lines to keep above and below cursor
 vim.o.shiftwidth = 2
-vim.o.signcolumn = 'number'        -- Constant width left column
+vim.o.signcolumn = 'number'     -- Constant width left column
 vim.o.smartcase = true          -- case-sensitive on uppercase search term
 vim.o.syntax = 'on'             -- Turn on syntax highlighting.
 vim.o.tabstop = 2
 vim.o.termguicolors = true
+vim.o.timeoutlen = 300
 vim.o.wrap = true               -- wrap long lines
 vim.o.wrapscan = false
 
@@ -39,7 +40,7 @@ vim.o.splitright = true         -- Add vsplit window to right
 
 -- ---MISC---
 vim.o.undofile = true           -- save undo files
-vim.o.undodir = [[home/theron/.vim/undo-history]]
+vim.o.undodir = [[/home/theron/.vim/undo-history]]
 vim.o.undolevels = 1000
 vim.o.undoreload = 1000
 

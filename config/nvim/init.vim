@@ -1,9 +1,9 @@
 let g:loaded_matchit = 1 " prevent builtin matchit from loading
+let mapleader = ' '
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'           " autofixing
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'ThePrimeagen/git-worktree.nvim'
   Plug 'hoob3rt/lualine.nvim'         " statusline
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'hrsh7th/nvim-compe'
@@ -25,11 +25,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   " Plug 'jremmen/vim-ripgrep'
   Plug 'mhinz/vim-startify'            " better start screen
-  Plug 'liuchengxu/vim-which-key'      " leader completion help
+  Plug 'folke/which-key.nvim'
 call plug#end()
 
 so ~/dotfiles/config/nvim/start-screen.vim
-so ~/dotfiles/config/nvim/which-key.vim
 :lua require('compe-config')
 :lua require('editor')
 :lua require('ember-language-server')
@@ -38,6 +37,7 @@ so ~/dotfiles/config/nvim/which-key.vim
 :lua require('nvim-tree-config')
 :lua require('nvim-treesitter-config')
 :lua require('telescope-config')
+:lua require('which-key-config')
 
 colorscheme codedark
 hi Normal       ctermbg=none  guibg=none

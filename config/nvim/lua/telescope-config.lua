@@ -6,4 +6,3 @@ require('telescope').setup{
     '**/lib/**'
   }
 }
-require('telescope').load_extension('git_worktree')

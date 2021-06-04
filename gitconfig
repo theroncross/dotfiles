@@ -1,6 +1,7 @@
 [user]
 	name = Theron Cross
 	email = theroncross@gmail.com
+	signingkey = 12518539137E0216E9B48A1E896D45B4788A065A
 [diff]
 	tool = vimdiff
 [difftool]
@@ -17,6 +18,7 @@
 [core]
   editor = nvim
 	excludesfile = /home/theron/.gitignore_global
+	pager = git-split-diffs --color | less -RFX
 [advice]
   detachedHead = false
 [pull]
@@ -30,3 +32,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[split-diffs]
+	theme-name = github-dark-dim

@@ -1,7 +1,6 @@
 require 'lualine'.setup{
   options = {
     theme = 'codedark',
-    section_separators = '',
     component_separators = '',
   },
   sections = {
@@ -10,8 +9,7 @@ require 'lualine'.setup{
     lualine_c = { {
       'filename',
       file_status = false,
-      full_path = true,
-      shorten = true
+      path = 2,
     } },
     lualine_x = { 'filetype' },
     lualine_y = { 'progress' },

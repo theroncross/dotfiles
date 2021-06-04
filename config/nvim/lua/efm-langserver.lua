@@ -9,18 +9,32 @@ local eslint = {
   formatStdin = true
 }
 
+local prettier = {
+  formatCommand = ([[
+      ./node_modules/.bin/prettier
+      ${--config-precedence:configPrecedence}
+      ${--tab-width:tabWidth}
+      ${--single-quote:singleQuote}
+      ${--trailing-comma:trailingComma}
+  ]]):gsub(
+      "\n",
+      ""
+  )
+}
+
 require "lspconfig".efm.setup {
-  init_options = {documentFormatting = true, codeAction = true},
-  filetypes = {"javascript", "typescript", "handlebars"},
-  root_dir = function(fname)
-    return lspconfig.util.root_pattern("tsconfig.json")(fname) or
-    lspconfig.util.root_pattern(".eslintrc.js", ".git")(fname);
-  end,
+  init_options = {documentFormatting = true},
+  -- filetypes = {"javascript", "typescript", "handlebars"},
+  -- root_dir = function(fname)
+  --   return lspconfig.util.root_pattern("tsconfig.json")(fname) or
+  --   lspconfig.util.root_pattern(".eslintrc.js", ".git")(fname);
+  -- end,
   settings = {
-    rootMarkers = {".eslintrc.js", ".git/"},
+    rootMarkers = {".git/"},
     languages = {
-      javascript = {eslint},
-      typescript = {eslint}
+      javascript = {prettier, eslint},
+      typescript = {prettier, eslint},
+      handlebars = {prettier},
     }
   }
 }

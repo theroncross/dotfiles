@@ -2,6 +2,8 @@
 alias ls='exa -la'
 alias cat='batcat --theme=TwoDark'
 
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y'
+
 alias g='git'
 #compdef g=git
 alias ga='git add'
@@ -36,6 +38,8 @@ alias gl='git pull'
 #compdef _git gl=git-pull
 alias glo='git log --oneline'
 #compdef _git glo=git-log
+alias gmt='git mergetool'
+#compdef _git gst=git-mergetool
 alias gp='git push'
 #compdef _git gp=git-push
 alias grbi='git rebase -i'
@@ -46,22 +50,13 @@ alias grba='git rebase --abort'
 #compdef _git grba=git-rebase
 alias gst='git status'
 #compdef _git gst=git-status
-alias gstc='gst | grep \'both modified:\' | grep -oP \'\S+$\' | xargs nvim'
-#compdef _git gst=git-status
 alias gup='git pull --rebase'
 #compdef _git gup=git-fetch
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 #compdef _git gwc=git-whatchanged
-alias gwtr='git worktree remove'
-#compdef _git gwtr=git-worktree
+alias ghco='gh pr checkout'
+#compdef ghco=gh
 
-function gwta
-  git worktree add -b $argv $argv
-end
-
-function gdv
-  git diff -w $argv | view -
-end
 
 #
 # Will return the current branch name

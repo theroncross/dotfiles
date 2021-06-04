@@ -5,8 +5,8 @@ wk.register({
     name = 'lsp',
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>",      "goto definition"     },
     D = { "<cmd>lua vim.lsp.buf.declaration()<CR>",     "goto declaration"    },
-    d = { "<cmd>lua vim.lsp.buf.implementation()<CR>",  "goto implementation" },
-    d = { "<cmd>lua vim.lsp.buf.references()<CR>",      "goto references"     },
+    i = { "<cmd>lua vim.lsp.buf.implementation()<CR>",  "goto implementation" },
+    r = { "<cmd>lua vim.lsp.buf.references()<CR>",      "goto references"     },
   },
   K = { "<cmd>lua vim.lsp.buf.hover()<CR>",             "show hover"          },
   -- nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
@@ -55,3 +55,4 @@ wk.register({
     }
   }
 })
+

@@ -1,8 +1,10 @@
 let g:loaded_matchit = 1 " prevent builtin matchit from loading
 let mapleader = ' '
+let maplocalleader = ' '
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'           " autofixing
+  Plug 'sindrets/diffview.nvim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'hoob3rt/lualine.nvim'         " statusline
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -36,6 +38,7 @@ so ~/dotfiles/config/nvim/start-screen.vim
 :lua require('lsp-config')
 :lua require('nvim-tree-config')
 :lua require('nvim-treesitter-config')
+:lua require('nvim-web-devicons')
 :lua require('telescope-config')
 :lua require('which-key-config')
 

@@ -8,10 +8,10 @@ let g:startify_lists = [
   \ ]
 
 let g:startify_bookmarks = [
-  \ { 'i': '~/dotfiles/config/nvim/init.vim' },
-  \ { 'f': '~/dotfiles/config/aliases.fish' },
-  \ { 's': '~/dotfiles/config/sway/config' },
-  \ { 'w': '~/webapp/app/' },
+  \ { 'i': '/home/theron/dotfiles/config/nvim/init.vim' },
+  \ { 'f': '/home/theron/dotfiles/config/fish/aliases.fish' },
+  \ { 'k': '/home/theron/dotfiles/config/kitty/kitty.conf' },
+  \ { 'w': '/home/theron/webapp/app/' },
   \ ]
 
 let g:startify_session_autoload = 1

@@ -1,4 +1,4 @@
-require('efm-langserver')
+-- require('efm-langserver')
 require('ember-language-server')
 require('ts-lsp')
 require('vim-lsp')

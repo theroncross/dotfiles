@@ -17,7 +17,8 @@ vim.o.ignorecase = true         -- case-insensitive on lowercase search
 vim.o.linebreak = true          -- breaks lines on words
 vim.o.list = true               -- Display different types of white spaces.
 vim.o.modelines = 0             -- Turn off modelines
-vim.o.swapfile = false
+vim.o.fixeol = false
+vim.o.eol = false
 vim.o.number = true             -- show line numbers
 vim.o.relativenumber = true
 vim.o.scrolloff = 2             -- minimum lines to keep above and below cursor
@@ -49,6 +50,8 @@ vim.o.undoreload = 1000
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.hbs setfiletype handlebars')
 
 vim.o.switchbuf = 'usetab,newtab' -- Open Quickfix links in new tab (or switch to tab if already open)
+
+vim.g.fixeol = 'off'
 
 vim.g.ale_fixers = {
 	['javascript'] = {'prettier', 'eslint'},

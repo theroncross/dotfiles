@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:/usr/bin/nvim
+SETUVAR --export --path PATH:/home/theron/\x2eemacs\x2ed/bin\x1e/usr/bin/go\x1e/home/theron/\x2envm/versions/node/v14\x2e17\x2e0/bin\x1e/home/theroncross/\x2efzf/bin\x1e/home/theron/\x2elocal/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/sbin\x1e/usr/bin\x1e/sbin\x1e/bin\x1e/usr/games\x1e/usr/local/games\x1e/snap/bin
 SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

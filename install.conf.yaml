@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.bash_logout: bash/bash_logout
+    ~/.bashrc: bash/bashrc
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.prettierrc:
+    ~/.profile: profile
+    ~/.zprofile: zprofile
+    ~/.zshrc: zsh/zshrc
+    ~/.config/:
+      glob: true 
+      path: config/*
+
+

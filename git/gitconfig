@@ -1,0 +1,37 @@
+[user]
+	name = Theron Cross
+	email = theroncross@gmail.com
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	keepBackup = false
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $MERGED $REMOTE
+[alias]
+	logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[core]
+  editor = nvim
+	excludesfile = /home/theron/.gitignore_global
+	pager = git-split-diffs --color | less -RFX
+[advice]
+  detachedHead = false
+[pull]
+	rebase = false
+[credential]
+	helper = cache
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[split-diffs]
+	theme-name = github-dark-dim
+[commit]
+	gpgsign = false

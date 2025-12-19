@@ -30,10 +30,10 @@ if type globus > /dev/null 2>&1; then
     eval "$(globus --zsh-completer)"
 fi
 
-autoload -Uz promptinit
-promptinit
-
+# Pure prompt
+autoload -U promptinit;promptinit
 prompt pure
+PURE_GIT_PULL=0
 
 alias vim="nvim ."
 
@@ -54,7 +54,7 @@ alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r0 git rm; git commit -m "--wip--" --no-verify'
 
 alias cat="batcat --theme=TwoDark"
-alias ls="exa -la"
+alias ls="eza -la"
 alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y && flatpak remove --unused -y"
 
 # pnpm

@@ -17,7 +17,7 @@
 [core]
   editor = nvim
 	excludesfile = /home/theron/.gitignore_global
-	pager = git-split-diffs --color | less -RFX
+	; pager = git-split-diffs --color | less -RFX
 [advice]
   detachedHead = false
 [pull]
